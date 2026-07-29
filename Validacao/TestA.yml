@@ -1,0 +1,24 @@
+info:
+  name: TestA
+  type: http
+
+http:
+  method: GET
+  url: http://localhost:8080/census?offset=5&size=20&showAlerts=false
+  params:
+    - name: offset
+      value: "5"
+      type: query
+    - name: size
+      value: "20"
+      type: query
+    - name: showAlerts
+      value: "false"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

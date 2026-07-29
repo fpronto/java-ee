@@ -32,6 +32,11 @@ public class App extends HttpServlet {
                     .build();
 
             HttpResponse<String> responseChar = client.send(requestChar, HttpResponse.BodyHandlers.ofString());
+            if (responseChar.statusCode() != 200) {
+                throw new Exception(
+                        "API respondeu com status " + responseChar.statusCode() + " (possível rate limit): "
+                                + responseChar.body());
+            }
             ObjectMapper mapper = new ObjectMapper();
             JsonNode jsonNode = mapper.readTree(responseChar.body());
             String status = jsonNode.get("status").asText();
@@ -52,6 +57,11 @@ public class App extends HttpServlet {
                             .build();
                     HttpResponse<String> responseEpisode = client.send(requestEpisode,
                             HttpResponse.BodyHandlers.ofString());
+                    if (responseEpisode.statusCode() != 200) {
+                        throw new Exception(
+                                "API respondeu com status " + responseEpisode.statusCode()
+                                        + " (possível rate limit): " + responseEpisode.body());
+                    }
                     finalString += "[PERIGO] Um Alien foi encontrado morto com o ID " + i + "!\n";
                     JsonNode jsonNodeEpisode = mapper.readTree(responseEpisode.body());
                     String episodeName = jsonNodeEpisode.get("name").asText();
