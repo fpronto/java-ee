@@ -1,0 +1,21 @@
+HTTP Client em Java: O Automatizador de Relatórios da Citadela
+Fazer pedidos um a um no Bruno para saber quem está vivo ou morto no universo de Rick & Morty é trabalho de estagiário!
+Vamos usar o Java para analisar os primeiros 20 cidadãos do universo automaticamente.
+Modifiquem o código base em grupo para cumprir estes 3 objetivos:
+
+O Varredor de Portais (O Loop)
+O vosso programa deve analisar automaticamente os primeiros 20 cidadãos do universo. Criem um ciclo que faça o código Java disparar 20 pedidos HTTP seguidos, alterando o ID no fim do URL de forma dinâmica (do ID 1 ao 20).
+
+O Censo Demográfico (Lógica de Contagem)
+Queremos estatísticas reais. O programa deve analisar o texto de cada resposta (JSON) e contar quantos cidadãos estão vivos e quantos estão mortos.
+No final do programa (fora do loop), imprimam o relatório final na consola:
+=> CENSO: Detetados X personagens VIVOS e Y personagens MORTOS nos primeiros 20 registos.
+
+Alerta de Segurança: Ameaça Alienígena
+A Citadela precisa de monitorizar riscos biológicos. Se o vosso programa detetar um cidadão que seja da espécie Alien e que esteja Morto, deve imprimir um alerta imediato na consola:
+[PERIGO] Um Alien foi encontrado morto com o ID X!
+
+Se o vosso programa detetar um alien morto, deve iniciar uma investigação após o alerta para descobrir onde ele foi visto pela última vez.
+Isolem o URL do episódio e façam o Java disparar um segundo pedido HTTP para o URL do episódio que acabaram de descobrir.
+Extraiam o nome desse episódio e mostrem o veredicto no ecrã com este formato:
+[ALERTA FORENSE] O último registo do alien morto foi no episódio: '...'.

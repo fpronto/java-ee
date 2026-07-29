@@ -7,7 +7,7 @@ public class Ex1VarredorPortais {
   public static void main(String[] args) throws Exception {
     HttpClient client = HttpClient.newHttpClient();
 
-    for (int i = 1; i < 21; i++) {
+    for (int i = 1; i <= 20; i++) {
       HttpRequest request = HttpRequest.newBuilder()
           .uri(URI.create("https://rickandmortyapi.com/api/character/" + i))
           .GET()
