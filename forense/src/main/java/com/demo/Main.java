@@ -13,7 +13,7 @@ public class Main {
 
     @GET
     @Produces(MediaType.TEXT_HTML)
-    protected String doGet() throws ServletException, IOException {
+    public String doGet() throws ServletException, IOException {
 
         return "<form method=\"get\" action=\"/census\">\n" + //
                 "  <label>Offset: <input type=\"number\" name=\"offset\" value=\"0\"></label>\n" + //
