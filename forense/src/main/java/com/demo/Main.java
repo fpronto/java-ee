@@ -3,22 +3,23 @@ package com.demo;
 import java.io.IOException;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
-@WebServlet("/")
-public class Main extends HttpServlet {
+@Path("/")
+public class Main {
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html");
-        resp.getWriter().write("<form method=\"get\" action=\"/census\">\n" + //
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    protected String doGet() throws ServletException, IOException {
+
+        return "<form method=\"get\" action=\"/census\">\n" + //
                 "  <label>Offset: <input type=\"number\" name=\"offset\" value=\"0\"></label>\n" + //
                 "  <label>Limit: <input type=\"number\" name=\"limit\" value=\"10\"></label>\n" + //
                 "  <label><input type=\"checkbox\" name=\"showAlerts\" value=\"true\"> Show alerts</label>\n" + //
                 "  <button type=\"submit\">Buscar</button>\n" + //
-                "</form>");
+                "</form>";
     }
 }
