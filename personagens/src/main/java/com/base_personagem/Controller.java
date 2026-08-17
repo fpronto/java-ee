@@ -18,7 +18,6 @@ import jakarta.ws.rs.QueryParam;
  *
  */
 @Path("/char")
-
 public class Controller {
     Service s = new Service();
 
@@ -40,7 +39,8 @@ public class Controller {
     }
 
     @DELETE
-    public void deleteChar(@QueryParam("id") int id) {
+    @Path("/{id}")
+    public void deleteChar(@PathParam("id") int id) {
         s.delete(id);
     }
 
