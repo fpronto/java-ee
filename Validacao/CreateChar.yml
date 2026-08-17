@@ -5,16 +5,16 @@ info:
 
 http:
   method: POST
-  url: http://localhost:8080/api/char?nome=Zorro&especie=Humano&comida=Sake
+  url: http://localhost:8080/api/char?nome=Ussop&especie=Pirate&comida=Donuts
   params:
     - name: nome
-      value: Zorro
+      value: Ussop
       type: query
     - name: especie
-      value: Humano
+      value: Pirate
       type: query
     - name: comida
-      value: Sake
+      value: Donuts
       type: query
   auth: inherit
 

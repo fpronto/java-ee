@@ -51,3 +51,14 @@ Criar um ficheiro HTML com um formulário para receber os parâmetros offset, li
 Criar uma pasta no cliente HTTP Bruno para guardar todos os testes de validação.
 
 Exercício do Log Criar um log para o nosso automatizador de censos. Cada vez que o Servlet /census for executado com sucesso, o programa deve adicionar (append) uma nova linha no ficheiro de log local (citadela_audit.log). Para que o programa escreva uma linha nova e não reescreva todo o ficheiro podem usar o método Files.writeString, mas têm que lhe passar uma opção específica, tentem descobrir qual é. Desafio extra Cada nova linha de log deve começar com com um "time stamp": [AAAA-MM-DDTHH:MM:SS.SSS]
+
+CRUD
+
+Criar uma classe chamada Personagem. Esta classe deve ter os seguintes campos (com getters, setters e construtores):
+private String nome;
+private String especie;
+private String comidaFavorita;
+
+Criar um endpoint ("/personagem") que permita fazer operações CRUD:
+Usar o método POST para criar uma nova personagem.
+Usar o método GET para ler todas as personagens.
