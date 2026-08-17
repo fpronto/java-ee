@@ -4,18 +4,13 @@ info:
   seq: 4
 
 http:
-  method: POST
-  url: http://localhost:8080/api/char?nome=Ussop&especie=Pirate&comida=Donuts
+  method: GET
+  url: http://localhost:8080/api/char
   params:
-    - name: nome
-      value: Ussop
-      type: query
-    - name: especie
-      value: Pirate
-      type: query
     - name: comida
-      value: Donuts
+      value: Arroz
       type: query
+      disabled: true
   auth: inherit
 
 settings:

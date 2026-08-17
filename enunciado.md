@@ -62,3 +62,13 @@ private String comidaFavorita;
 Criar um endpoint ("/personagem") que permita fazer operações CRUD:
 Usar o método POST para criar uma nova personagem.
 Usar o método GET para ler todas as personagens.
+
+CSR
+
+Reestruturem o vosso código para respeitar o padrão de desenho Controller-Service-Repository.
+
+- Controller só deve ser responsável por receber os pedidos HTTP e reencaminhar para o Service.
+- Repository só deve ter código relacionado com a persistência de dados.
+- Service deve estabelecer a comunicação entre os outros componentes e qualquer lógica de processamento que seja necessária.
+
+Para o Service ter alguma lógica pela qual é responsável, façam com que qualquer criação de personagem que não inclua a "comidaFavorita" atribua automaticamente um valor a esse campo (uma comida ao vosso critério).
