@@ -3,10 +3,18 @@ package com.base_personagem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Repository {
-  static final List<Personagem> listaP = new ArrayList<Personagem>();
+import jakarta.enterprise.context.ApplicationScoped;
 
-  static {
+@ApplicationScoped()
+public class Repository {
+  private List<Personagem> listaP = new ArrayList<Personagem>();
+
+  public int size() {
+    return listaP.size();
+  }
+
+  Repository() {
+    super();
     listaP.add(new Personagem("Goku", "Saiyajin", "Arroz"));
     listaP.add(new Personagem("Bulma", "Humana", "Sushi"));
     listaP.add(new Personagem("Vegeta", "Saiyajin", "Sushi"));

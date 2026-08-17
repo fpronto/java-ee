@@ -1,11 +1,8 @@
 package com.base_personagem;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import jakarta.inject.Inject;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
-import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.PATCH;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
@@ -19,7 +16,8 @@ import jakarta.ws.rs.QueryParam;
  */
 @Path("/char")
 public class Controller {
-    Service s = new Service();
+    @Inject
+    Service s;
 
     @GET
     public String getChar() {
